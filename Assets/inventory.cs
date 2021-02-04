@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class inventory : MonoBehaviour
 {
-    public bool gotKey;
-    
+
     // Start is called before the first frame update
     void Awake()
     {
-        gotKey = false;
+
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class inventory : MonoBehaviour
     {
         if (other.gameObject.tag == "key")
         {
-            gotKey = true;
+            LevelManager.instance.gotKey = true;
             Destroy(other.gameObject);
         }
     }
