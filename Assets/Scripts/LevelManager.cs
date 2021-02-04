@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour {
 
     public static LevelManager instance;
     private GameObject theDoor;
-    private doorController theDoorController;
+    private DoorController theDoorController;
     
     public bool gotKey = false;
 
@@ -18,11 +18,17 @@ public class LevelManager : MonoBehaviour {
         // set the instance property/variable to this object
         instance = this;
         theDoor = GameObject.FindWithTag("door");
-        theDoorController = theDoor.GetComponent<doorController>();
+        theDoorController = theDoor.GetComponent<DoorController>();
     }
+    
 
     public void OpenDoor()
     {
         theDoorController.StartOpen();
+    }
+    
+    public void CloseDoor()
+    {
+        theDoorController.StartClose();
     }
 }
